@@ -1,0 +1,215 @@
+*{
+    margin:0;
+    padding:0;
+    text-align: center;
+}
+
+h1{
+    background: linear-gradient(90deg, #0f0c29, #302b63, #24243e);
+    color: #fff;
+    padding: 1.5rem;
+    text-align: center;
+    letter-spacing: 2px;
+    text-shadow: 
+        0 0 5px rgb(200, 210, 18),
+        0 0 15px rgb(228, 222, 21);
+    box-shadow: 0 10px 30px rgba(128,0,128,0.6);
+}
+
+
+.choice{
+  
+    height:175px;
+    width:170px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: box-shadow 0.3s ease;
+}
+
+img{
+    height:150px;
+    width:149px;
+    object-fit: cover;
+    border-radius: 50%;
+    
+}
+
+
+.choices{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:3rem;
+    margin-top: 5rem;
+}
+.choice:hover{
+    cursor: pointer;
+        box-shadow: 
+        0 0 10px purple,
+        0 0 25px purple,
+        0 0 40px purple;
+}
+#paper:hover{
+    cursor: pointer;
+        box-shadow: 
+        0 0 10px purple,
+        0 0 25px purple,
+        0 0 40px purple;
+}
+.score-board{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    margin-top: 3rem;
+    gap:5rem;
+}
+#user-score,#computer-score{
+    font-size: 3.8rem;
+}
+.msg-container{
+    margin-top: 5rem;
+}
+
+#msg{
+    background: #000;
+    color: white;
+    font-size: 2rem;
+    padding: 1rem 2rem;
+    display: inline-block;
+    border-radius: 1rem;
+    position: relative;
+
+    animation: neonPulse 3s infinite ease-in-out,
+               colorShift 6s infinite linear;
+}
+
+@keyframes neonPulse {
+    0% {
+        box-shadow:
+            0 0 5px #00f0ff,
+            0 0 10px #00f0ff;
+    }
+    50% {
+        box-shadow:
+            0 0 20px #00f0ff,
+            0 0 40px #00f0ff,
+            0 0 60px #00f0ff;
+    }
+    100% {
+        box-shadow:
+            0 0 5px #00f0ff,
+            0 0 10px #00f0ff;
+    }
+}
+
+@keyframes colorShift {
+    0%   { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
+}
+.texture{
+    background-image: url("https://media.istockphoto.com/id/1014681156/photo/white-grey-marble-texture-background-with-detailed-structure-high-resolution-bright-and.webp?a=1&b=1&s=612x612&w=0&k=20&c=4QAVPFa7El5kjCFeXXgQdxXLRW7nmcQLqIFgP0VroOs=");
+    background-repeat: repeat;
+    background-size: auto;
+}
+h1:hover{
+    box-shadow:
+        0 0 15px purple,
+        0 0 30px purple,
+        0 0 60px purple;
+
+    text-shadow:
+        0 0 5px violet,
+        0 0 10px violet;
+}
+.choice{
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.choice:hover{
+    transform: scale(1.15);
+    box-shadow:
+        0 0 20px rgba(255,0,255,0.7),
+        0 0 40px rgba(255,0,255,0.5);
+}
+
+.choice:active{
+    transform: scale(1.05);
+}
+
+#msg{
+    padding: 1rem 2rem;
+    font-size: 1.4rem;
+    border-radius: 1rem;
+    color: white;
+    animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes pulse{
+    from{
+        box-shadow: 0 0 10px gold;
+    }
+    to{
+        box-shadow:
+            0 0 25px gold,
+            0 0 50px orange;
+    }
+}
+/* ================= MOBILE RESPONSIVE ================= */
+
+@media (max-width: 768px){
+
+    h1{
+        font-size: 1.4rem;
+        padding: 1rem;
+        letter-spacing: 1px;
+    }
+
+    .choices{
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-top: 2.5rem;
+    }
+
+    .choice{
+        width: 22vw;
+        height: 22vw;
+        max-width: 120px;
+        max-height: 120px;
+        min-width: 80px;
+        min-height: 80px;
+    }
+
+    img{
+        width: 18vw;
+        height: 18vw;
+        max-width: 100px;
+        max-height: 100px;
+        min-width: 60px;
+        min-height: 60px;
+    }
+
+    .score-board{
+        gap: 2rem;
+        font-size: 2rem;
+        margin-top: 2rem;
+    }
+
+    #user-score,
+    #computer-score{
+        font-size: 2.5rem;
+    }
+
+    .msg-container{
+        margin-top: 3rem;
+    }
+
+    #msg{
+        font-size: 1rem;
+        padding: 0.8rem 1.2rem;
+        max-width: 90%;
+    }
+}
+
